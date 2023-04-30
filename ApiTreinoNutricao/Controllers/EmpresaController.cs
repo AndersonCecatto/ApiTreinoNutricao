@@ -31,7 +31,7 @@ namespace ApiTreinoNutricao.Controllers
         [HttpPut]
         public IActionResult Alterar(Empresa empresa)
         {
-            return Execute(() => _empresaService.Update(empresa));
+            return Execute(() => _empresaService.UpdateWithRule(empresa));
         }
 
         [HttpGet]

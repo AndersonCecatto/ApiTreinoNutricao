@@ -30,5 +30,12 @@ namespace ApiTreinoNutricao.Service.Common
             _baseRepository.Update(entity);
             return entity;
         }
+
+        public TEntity UpdateWithRule(TEntity entity, IList<string>? camposExcluir = null)
+        {
+            _baseRepository.UpdateWithRule(entity, camposExcluir);
+
+            return entity;
+        }
     }
 }

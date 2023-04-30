@@ -9,5 +9,6 @@ namespace ApiTreinoNutricao.Domain.Interfaces.Repositories.Common
         void Delete(long id);
         IEnumerable<TEntity> GetAll();
         TEntity Find(long id);
+        void UpdateWithRule(TEntity entity, IList<string>? camposExcluir = null);
     }
 }

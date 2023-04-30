@@ -11,5 +11,12 @@ namespace ApiTreinoNutricao.Data.Repositories
         {
             
         }
+
+        public override Empresa Insert(Empresa entity)
+        {
+            entity.Ativo = true;
+            entity.DataCadastro = DateTime.Now;
+            return base.Insert(entity);
+        }
     }
 }

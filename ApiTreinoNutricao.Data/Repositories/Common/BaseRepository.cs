@@ -2,11 +2,7 @@
 using ApiTreinoNutricao.Domain.Common;
 using ApiTreinoNutricao.Domain.Interfaces.Repositories.Common;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Reflection;
 
 namespace ApiTreinoNutricao.Data.Repositories.Common
 {
@@ -27,12 +23,9 @@ namespace ApiTreinoNutricao.Data.Repositories.Common
 
         public virtual TEntity Find(long id) => _apiBaseContext.Set<TEntity>().Find(id);
 
-        public virtual IEnumerable<TEntity> GetAll()
-        {
-            return _apiBaseContext.Set<TEntity>().AsEnumerable();
-        }
+        public virtual IEnumerable<TEntity> GetAll() => _apiBaseContext.Set<TEntity>().AsEnumerable();
 
-        public TEntity Insert(TEntity entity)
+        public virtual TEntity Insert(TEntity entity)
         {
             var retorno = _apiBaseContext.Set<TEntity>().Add(entity).Entity;
             _apiBaseContext.SaveChanges();
@@ -42,6 +35,23 @@ namespace ApiTreinoNutricao.Data.Repositories.Common
         public virtual void Update(TEntity entity)
         {
             _apiBaseContext.Entry(entity).State = EntityState.Modified;
+            _apiBaseContext.SaveChanges();
+        }
+
+        public virtual void UpdateWithRule(TEntity entity, IList<string>? camposExcluir = null)
+        {
+            var camposExcluidos = new List<string>()
+            {
+                "Id", "DataCadastro"
+            };
+
+            if (camposExcluir != null)
+                camposExcluidos.AddRange(camposExcluir);
+
+            foreach (PropertyInfo property in entity.GetType().GetProperties())
+                if (!camposExcluidos.Contains(property.Name))
+                    _apiBaseContext.Entry(entity).Property(property.Name).IsModified = true;
+
             _apiBaseContext.SaveChanges();
         }
     }

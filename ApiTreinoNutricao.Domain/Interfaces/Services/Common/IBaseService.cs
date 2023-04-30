@@ -9,5 +9,6 @@ namespace ApiTreinoNutricao.Domain.Interfaces.Services.Common
         IEnumerable<TEntity> GetAll();
         TEntity GetById(long id);
         TEntity Update(TEntity entity);
+        TEntity UpdateWithRule(TEntity entity, IList<string>? camposExcluir = null);
     }
 }
