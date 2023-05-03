@@ -18,12 +18,16 @@ namespace ApiTreinoNutricao.CrossCutting
         private static IServiceCollection AddRepositories(this IServiceCollection services)
         {
             services.AddScoped<IEmpresaRepository, EmpresaRepository>();
+            services.AddScoped<IUsuarioRepository, UsuarioRepository>();
+            services.AddScoped<IProjetoRepository, ProjetoRepository>();
             return services;
         }
 
         private static IServiceCollection AddServices(this IServiceCollection services)
         {
             services.AddScoped<IEmpresaService, EmpresaService>();
+            services.AddScoped<IUsuarioService, UsuarioService>();
+            services.AddScoped<IProjetoService, ProjetoService>();
             return services;
         }
     }

@@ -16,6 +16,8 @@ namespace ApiTreinoNutricao.Data.Context
             base.OnModelCreating(modelBuilder);
 
             modelBuilder.Entity<Empresa>(new EmpresaMap().Configure);
+            modelBuilder.Entity<Usuario>(new UsuarioMap().Configure);
+            modelBuilder.Entity<Projeto>(new ProjetoMap().Configure);
         }
     }
 }

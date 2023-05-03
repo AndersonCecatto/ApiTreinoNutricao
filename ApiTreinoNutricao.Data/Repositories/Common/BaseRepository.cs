@@ -27,8 +27,12 @@ namespace ApiTreinoNutricao.Data.Repositories.Common
 
         public virtual TEntity Insert(TEntity entity)
         {
+            entity.Ativo = true;
+            entity.DataCadastro = DateTime.Now;
+
             var retorno = _apiBaseContext.Set<TEntity>().Add(entity).Entity;
             _apiBaseContext.SaveChanges();
+
             return retorno;
         }
 
@@ -49,7 +53,7 @@ namespace ApiTreinoNutricao.Data.Repositories.Common
                 camposExcluidos.AddRange(camposExcluir);
 
             foreach (PropertyInfo property in entity.GetType().GetProperties())
-                if (!camposExcluidos.Contains(property.Name))
+                if (!camposExcluidos.Contains(property.Name) && !property.GetMethod.IsVirtual)
                     _apiBaseContext.Entry(entity).Property(property.Name).IsModified = true;
 
             _apiBaseContext.SaveChanges();

@@ -21,6 +21,8 @@ builder.Services.AddDbContext<ApiBaseContext>(options =>
     options.EnableSensitiveDataLogging();
 });
 
+AppContext.SetSwitch("Npgsql.EnableLegacyTimestampBehavior", true);
+
 builder.Services.AddApplicationServicesCollections();
 
 var app = builder.Build();
