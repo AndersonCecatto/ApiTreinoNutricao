@@ -35,10 +35,17 @@ namespace ApiTreinoNutricao.Controllers
         }
 
         [HttpGet]
-        [Route("{planoAlimentarId}")]
+        [Route("PlanoAlimentarId/{planoAlimentarId}")]
         public IActionResult GetById(long planoAlimentarId)
         {
             return Execute(() => _planoAlimentarService.GetById(planoAlimentarId));
+        }
+
+        [HttpGet]
+        [Route("UsuarioId/{usuarioId}")]
+        public IActionResult GetByUsuarioId(long usuarioId)
+        {
+            return Execute(() => _planoAlimentarService.GetByUsuarioId(usuarioId));
         }
     }
 }

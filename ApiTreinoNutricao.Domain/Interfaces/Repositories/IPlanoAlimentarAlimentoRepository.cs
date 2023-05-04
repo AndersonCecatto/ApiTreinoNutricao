@@ -5,6 +5,6 @@ namespace ApiTreinoNutricao.Domain.Interfaces.Repositories
 {
     public interface IPlanoAlimentarAlimentoRepository : IBaseRepository<PlanoAlimentarAlimento>
     {
-        
+        IEnumerable<PlanoAlimentarAlimento> GetByPlanoAlimentarId(long planoAlimentarId);
     }
 }
