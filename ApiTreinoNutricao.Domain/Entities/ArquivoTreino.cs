@@ -7,6 +7,6 @@ namespace ApiTreinoNutricao.Domain.Entities
         public string? Descricao { get; set; }
         public byte[]? Arquivo { get; set; }
         public long TreinoExercicioId { get; set; }
-        public virtual TreinoExercicio TreinoExercicio { get; set; }
+        public virtual TreinoExercicio? TreinoExercicio { get; set; }
     }
 }

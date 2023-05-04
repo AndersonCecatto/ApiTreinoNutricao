@@ -1,0 +1,67 @@
+﻿create table Empresa (
+	"Id" int GENERATED ALWAYS AS identity primary key,
+	Nome varchar(250) not null,
+	cpfCnpj varchar(20) not null,
+	Telefone varchar(50) not null,
+	Email varchar(200) null,
+	Ativo bool not null,
+	DataCadastro timestamp not null default now()
+)
+
+create table Usuario (
+	"Id" int GENERATED ALWAYS AS identity primary key,
+	Nome varchar(250) not null,
+	Cpf varchar(20) not null,
+	Telefone varchar(50) not null,
+	DataNascimento timestamp not null default now(),
+	Email varchar(150) null,
+	Senha varchar(150) null,
+	empresa_id int2 not NULL,	
+	DataCadastro timestamp not null default now(),
+	Ativo bool not null,
+	CONSTRAINT fk_empresa FOREIGN KEY (empresa_id) REFERENCES empresa("Id")
+)
+
+
+create table projeto (
+	"Id" int GENERATED ALWAYS AS identity primary key,
+	Nome varchar(250) not null,
+	PlanoAlimentar bool not null,
+	Treino bool not null,
+	Foto bool not null,
+	Avaliacao bool not null,
+	Exame bool not null,
+	Anamnese bool not null,
+	observacoes varchar(350) null,
+	empresa_id int2 not NULL,
+	DataCadastro timestamp not null default now(),
+	Ativo bool not null,
+	CONSTRAINT fk_empresa FOREIGN KEY (empresa_id) REFERENCES empresa("Id")
+)
+
+create table plano_alimentar(
+	"Id" int GENERATED ALWAYS AS identity primary key,
+	Descricao varchar(500) not null,
+	usuario_id int2 NULL,
+	DataCadastro timestamp not null default now(),
+	Ativo bool not null,
+	CONSTRAINT fk_usuario FOREIGN KEY (usuario_id) REFERENCES usuario("Id")
+)
+
+create table treino(
+	"Id" int GENERATED ALWAYS AS identity primary key,
+	Descricao varchar(500) not null,
+	usuario_id int2 NULL,
+	DataCadastro timestamp not null default now(),
+	Ativo bool not null,
+	CONSTRAINT fk_usuario FOREIGN KEY (usuario_id) REFERENCES usuario("Id")
+)
+
+create table Alimento(
+	"Id" int GENERATED ALWAYS AS identity primary key,
+	Nome varchar(150) not null,
+	Quantidade numeric(5,2) null,
+	Medida int2 null,
+	DataCadastro timestamp not null default now(),
+	Ativo bool not null
+)

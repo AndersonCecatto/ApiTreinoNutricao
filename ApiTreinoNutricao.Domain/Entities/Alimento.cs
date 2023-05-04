@@ -1,4 +1,5 @@
 ﻿using ApiTreinoNutricao.Domain.Common;
+using ApiTreinoNutricao.Domain.Enum;
 
 namespace ApiTreinoNutricao.Domain.Entities
 {
@@ -6,5 +7,6 @@ namespace ApiTreinoNutricao.Domain.Entities
     {
         public string? Nome { get; set; }
         public decimal Quantidade { get; set; }
+        public MedidaEnum Medida { get; set; }
     }
 }
