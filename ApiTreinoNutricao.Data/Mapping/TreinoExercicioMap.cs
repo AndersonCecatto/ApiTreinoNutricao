@@ -11,7 +11,7 @@ namespace ApiTreinoNutricao.Data.Mapping
             builder.ToTable("treino_exercicio");
             builder.HasKey(p => p.Id);
 
-            builder.Property(p => p.Observacoes).HasColumnName("observacoes").HasColumnType("varchar(350)");
+            builder.Property(p => p.Observacoes).HasColumnName("observacoes").HasColumnType("varchar(500)");
             builder.Property(p => p.DataCadastro).HasColumnName("datacadastro").HasColumnType("timestamp");
             builder.Property(p => p.Ativo).HasColumnName("ativo").HasColumnType("bool");
 

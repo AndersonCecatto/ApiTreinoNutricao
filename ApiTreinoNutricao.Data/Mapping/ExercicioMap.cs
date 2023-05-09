@@ -13,7 +13,7 @@ namespace ApiTreinoNutricao.Data.Mapping
 
             builder.Property(p => p.Descricao).HasColumnName("descricao").HasColumnType("varchar(250)");
             builder.Property(p => p.Serie).HasColumnName("serie").HasColumnType("varchar(50)");
-            builder.Property(p => p.TempoDescanso).HasColumnName("tempodescanso").HasColumnType("varchar(50)");
+            builder.Property(p => p.TempoDescanso).HasColumnName("tempo_descanso").HasColumnType("varchar(50)");
             builder.Property(p => p.Repeticoes).HasColumnName("repeticoes").HasColumnType("varchar(50)");
             builder.Property(p => p.Tecnica).HasColumnName("tecnica").HasColumnType("varchar(50)");
             builder.Property(p => p.DataCadastro).HasColumnName("datacadastro").HasColumnType("timestamp");

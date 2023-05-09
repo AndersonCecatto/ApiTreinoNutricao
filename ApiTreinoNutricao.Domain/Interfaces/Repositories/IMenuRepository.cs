@@ -3,8 +3,8 @@ using ApiTreinoNutricao.Domain.Interfaces.Repositories.Common;
 
 namespace ApiTreinoNutricao.Domain.Interfaces.Repositories
 {
-    public interface ITreinoExercicioRepository : IBaseRepository<TreinoExercicio>
+    public interface IMenuRepository : IBaseRepository<Menu>
     {
-        IEnumerable<TreinoExercicio> GetByTreinoId(long treinoId);
+        
     }
 }
