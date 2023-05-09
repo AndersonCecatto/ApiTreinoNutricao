@@ -65,3 +65,93 @@ create table Alimento(
 	DataCadastro timestamp not null default now(),
 	Ativo bool not null
 )
+
+create table Treino_Exercicio(
+	"Id" int GENERATED ALWAYS AS identity primary key,
+	Observacoes varchar(500) not null,
+	treino_id int2 not NULL,
+	exercicio_id int2 not NULL,
+	DataCadastro timestamp not null default now(),
+	Ativo bool not null,
+	CONSTRAINT fk_treino FOREIGN KEY (treino_id) REFERENCES treino("Id"),
+	CONSTRAINT fk_exercicio FOREIGN KEY (exercicio_id) REFERENCES exercicio("Id")
+)
+
+create table Exercicio(
+	"Id" int GENERATED ALWAYS AS identity primary key,
+	Descricao varchar(150) not null,
+	Serie varchar(50) null,
+	Tempo_descanso varchar(50) null,
+	Repeticoes varchar(50) null,
+	Tecnica varchar(200) null,
+	DataCadastro timestamp not null default now(),
+	Ativo bool not null
+)
+
+create table Menu(
+	"Id" int GENERATED ALWAYS AS identity primary key,
+	Titulo varchar(30) not null,
+	Icone varchar(30) null,	
+	DataCadastro timestamp not null default now(),
+	Ativo bool not null
+)
+
+create table Menu_Usuario(
+	"Id" int GENERATED ALWAYS AS identity primary key,
+	usuario_id int2 not NULL,
+	menu_id int2 not NULL,
+	empresa_id int2 not NULL,
+	DataCadastro timestamp not null default now(),
+	Ativo bool not null,
+	CONSTRAINT fk_usuario FOREIGN KEY (usuario_id) REFERENCES usuario("Id"),
+	CONSTRAINT fk_empresa FOREIGN KEY (empresa_id) REFERENCES empresa("Id"),
+	CONSTRAINT fk_menu FOREIGN KEY (menu_id) REFERENCES menu("Id")
+)
+
+create table Anamnese (
+	"Id" int GENERATED ALWAYS AS identity primary key,
+	Nome varchar(100) not null,
+	DataNascimento varchar(12) not null,
+	Genero int2 not null,
+	Ocupacao varchar(100) null,
+	Objetivo varchar(200) null,
+	Diabetes bool not null,
+	Pre_diabetes bool not null,
+	Hipotireoidismo bool not null,
+	gastrite bool not null,
+	Hipertensao bool not null,
+	Dislipidemia bool not null,
+	Ansiedade bool not null,
+	Doenca_Renal_Cronica bool not null,
+	Doencas_Respiratorias bool not null,
+	Colite bool not null,
+	Triglicerides bool not null,
+	Doencas_Cardiovasculares bool not null,
+	Transtornos_Alimentares bool not null,
+	Fumante bool not null,
+	BebidaAlcoolica bool not null,
+	Frequencia_Bebida_Alcoolica int2 null,
+	PraticaAtividadeFisica bool not null,
+	Frequencia_AtividadeFisica varchar(200) null,
+	Qualidade_Sono int2 not null,
+	Horas_Costuma_Dormir int2 not null,
+	Usa_Medicamentos_Suplementos bool not null,
+	Quais_Medicamento_Suplementos varchar(200) null,
+	Realizou_Procedimento_Cirurgico bool not null,
+	Qual_Procedimento_Cirurgico varchar(200) null,
+	Alergia_Alimento bool not null,
+	Qual_Alimento_Alergia varchar(200) null,
+	Classifica_Apetite int2 not null,
+	Cadencia_Mastigacao int2 not null,
+	Prepara_RefeicaoCasa int2 not null,
+	Come_Fora int2 not null,
+	Frequencia_Defecacao int2 not null,
+	Fraquencia_Habito_Urinario int2 not null,
+	Historico_Doenca_Familiar varchar(300) null,
+	Objetivo_Meta_Plano varchar(350) null,
+	Observacoes varchar(500) null,
+	usuario_id int2 not NULL,
+	DataCadastro timestamp not null default now(),
+	Ativo bool not null,
+	CONSTRAINT fk_usuario FOREIGN KEY (usuario_id) REFERENCES usuario("Id")
+)
