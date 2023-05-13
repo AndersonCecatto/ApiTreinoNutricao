@@ -12,10 +12,11 @@ namespace ApiTreinoNutricao.Domain.Entities
         {
             Id = anamneseDto.Id;
             Ativo = anamneseDto.Ativo;
+            DataCadastro = DateTime.Now;
             UsuarioId = anamneseDto.UsuarioId;
             Nome = anamneseDto.Nome;
             DataNascimento = anamneseDto.DataNascimento;
-            Genero = anamneseDto.Genero;
+            Genero = (int)anamneseDto.Genero;
             Ocupacao = anamneseDto.Ocupacao;
             Objetivo = anamneseDto.Objetivo;
             Diabetes = anamneseDto.Diabetes;
@@ -35,23 +36,24 @@ namespace ApiTreinoNutricao.Domain.Entities
             BebidaAlcoolica = anamneseDto.BebidaAlcoolica;
             FrequenciaBebidaAlcoolica = anamneseDto.FrequenciaBebidaAlcoolica;
             PraticaAtividadeFisica = anamneseDto.PraticaAtividadeFisica;
-            QualidadeSono = anamneseDto.QualidadeSono;
-            HorasCostumaDormir = anamneseDto.HorasCostumaDormir;
+            QualidadeSono = (int)anamneseDto.QualidadeSono;
+            HorasCostumaDormir = (int)anamneseDto.HorasCostumaDormir;
             UsaMedicamentosSuplementos = anamneseDto.UsaMedicamentosSuplementos;
             QuaisMedicamentoSuplementos = anamneseDto.QuaisMedicamentoSuplementos;
             RealizouProcedimentoCirurgico = anamneseDto.RealizouProcedimentoCirurgico;
             QualProcedimentoCirurgico = anamneseDto.QualProcedimentoCirurgico;
             AlergiaAlimento = anamneseDto.AlergiaAlimento;
             QualAlimentoAlergia = anamneseDto.QualAlimentoAlergia;
-            ClassificaApetite = anamneseDto.ClassificaApetite;
-            CadenciaMastigacao = anamneseDto.CadenciaMastigacao;
-            PreparaRefeicaoCasa = anamneseDto.PreparaRefeicaoCasa;
-            ComeFora = anamneseDto.ComeFora;
-            FrequenciaDefecacao = anamneseDto.FrequenciaDefecacao;
-            FraquenciaHabitoUrinario = anamneseDto.FraquenciaHabitoUrinario;
+            ClassificaApetite = (int)anamneseDto.ClassificaApetite;
+            CadenciaMastigacao = (int)anamneseDto.CadenciaMastigacao;
+            PreparaRefeicaoCasa = (int)anamneseDto.PreparaRefeicaoCasa;
+            ComeFora = (int)anamneseDto.ComeFora;
+            FrequenciaDefecacao = (int)anamneseDto.FrequenciaDefecacao;
+            FraquenciaHabitoUrinario = (int)anamneseDto.FraquenciaHabitoUrinario;
             HistoricoDoencaFamiliar = anamneseDto.HistoricoDoencaFamiliar;
             ObjetivoMetaPlano = anamneseDto.ObjetivoMetaPlano;
             Observacoes = anamneseDto.Observacoes;
+            FrequenciaAtividadeFisica = anamneseDto.FrequenciaAtividadeFisica;
         }
 
         public long UsuarioId { get; set; }

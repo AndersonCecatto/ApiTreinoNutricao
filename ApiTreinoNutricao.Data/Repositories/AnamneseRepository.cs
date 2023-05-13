@@ -13,6 +13,6 @@ namespace ApiTreinoNutricao.Data.Repositories
             
         }
 
-        public Anamnese GetByUsuarioId(long usuarioId) => _apiBaseContext.Set<Anamnese>().AsNoTracking().FirstOrDefault(x => usuarioId == usuarioId);
+        public Anamnese GetByUsuarioId(long usuarioId) => _apiBaseContext.Set<Anamnese>().AsNoTracking().FirstOrDefault(x => x.UsuarioId== usuarioId);
     }
 }

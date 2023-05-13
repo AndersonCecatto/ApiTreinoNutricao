@@ -18,7 +18,7 @@ namespace ApiTreinoNutricao.Data.Repositories
             return _apiBaseContext.Set<PlanoAlimentarAlimento>()
                                   .AsNoTracking()
                                   .Include(x => x.Alimento)
-                                  .Where(x => x.PlanoAlimentarId == planoAlimentarId && x.Alimento.Ativo);
+                                  .Where(x => x.PlanoAlimentarId == planoAlimentarId && x.Alimento.Ativo == true);
         }
     }
 }
