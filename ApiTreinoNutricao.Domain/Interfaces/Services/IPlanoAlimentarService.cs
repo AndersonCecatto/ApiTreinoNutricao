@@ -9,5 +9,6 @@ namespace ApiTreinoNutricao.Domain.Interfaces.Services
         PlanoAlimentar Add(PlanoAlimentarDto planoAlimentarDto);
         PlanoAlimentarDto UpdateWithRule(PlanoAlimentarDto planoAlimentarDto);
         IEnumerable<PlanoAlimentar> GetByUsuarioId(long usuarioId);
+        IEnumerable<PlanoAlimentar> GetByEmpresaId(long empresaId);
     }
 }

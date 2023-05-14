@@ -12,11 +12,14 @@ namespace ApiTreinoNutricao.Domain.Entities
             Id = treinoDto.Id;
             Descricao = treinoDto.Descricao;
             UsuarioId = treinoDto.UsuarioId;
+            EmpresaId = treinoDto.EmpresaId;
             Ativo = treinoDto.Ativo;
         }
 
         public string? Descricao { get; set; }
         public long? UsuarioId { get; set; }
         public virtual Usuario Usuario { get; set; }
+        public long EmpresaId { get; set; }
+        public virtual Empresa Empresa { get; set; }
     }
 }

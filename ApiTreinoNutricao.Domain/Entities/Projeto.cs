@@ -18,6 +18,7 @@ namespace ApiTreinoNutricao.Domain.Entities
             Exame = projetoDto.Exame;
             Anamnese = projetoDto.Anamnese;
             EmpresaId = projetoDto.EmpresaId;
+            Observacoes = projetoDto.Observacoes;
             Ativo = projetoDto.Ativo;
         }
 

@@ -13,6 +13,9 @@ namespace ApiTreinoNutricao.Data.Repositories
             
         }
 
+        public IEnumerable<PlanoAlimentar> GetByEmpresaId(long empresaId) => _apiBaseContext.Set<PlanoAlimentar>().Where(x => x.EmpresaId == empresaId).AsNoTracking();
+        
+
         public IEnumerable<PlanoAlimentar> GetByUsuarioId(long usuarioId) => _apiBaseContext.Set<PlanoAlimentar>().Where(x => x.UsuarioId == usuarioId).AsNoTracking();
     }
 }

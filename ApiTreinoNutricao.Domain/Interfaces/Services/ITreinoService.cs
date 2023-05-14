@@ -8,5 +8,7 @@ namespace ApiTreinoNutricao.Domain.Interfaces.Services
     {
         Treino Add(TreinoDto treinoDto);
         TreinoDto UpdateWithRule(TreinoDto treinoDto);
+        IEnumerable<Treino> GetByUsuarioId(long usuarioId);
+        IEnumerable<Treino> GetByEmpresaId(long empresaId);
     }
 }

@@ -47,5 +47,12 @@ namespace ApiTreinoNutricao.Controllers
         {
             return Execute(() => _planoAlimentarService.GetByUsuarioId(usuarioId));
         }
+
+        [HttpGet]
+        [Route("EmpresaId/{empresaId}")]
+        public IActionResult GetByEmpresaId(long empresaId)
+        {
+            return Execute(() => _planoAlimentarService.GetByEmpresaId(empresaId));
+        }
     }
 }

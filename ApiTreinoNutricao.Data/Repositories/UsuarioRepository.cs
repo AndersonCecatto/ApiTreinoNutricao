@@ -15,7 +15,7 @@ namespace ApiTreinoNutricao.Data.Repositories
         }
 
         public IEnumerable<Usuario> GetByEmpresaId(long empresaId) 
-            => _apiBaseContext.Set<Usuario>().Where(x => x.EmpresaId == empresaId);
+            => _apiBaseContext.Set<Usuario>().Where(x => x.EmpresaId == empresaId && x.Ativo == true);
 
         public ResponseDto<Usuario> Login(UsuarioLoginDto usuarioLogin)
         {

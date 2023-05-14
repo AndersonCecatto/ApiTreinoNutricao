@@ -7,5 +7,6 @@ namespace ApiTreinoNutricao.Domain.Interfaces.Repositories
     public interface IPlanoAlimentarRepository : IBaseRepository<PlanoAlimentar>
     {
         IEnumerable<PlanoAlimentar> GetByUsuarioId(long usuarioId);
+        IEnumerable<PlanoAlimentar> GetByEmpresaId(long empresaId);
     }
 }

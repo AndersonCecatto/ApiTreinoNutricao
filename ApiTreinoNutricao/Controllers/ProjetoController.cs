@@ -22,6 +22,13 @@ namespace ApiTreinoNutricao.Controllers
             return Execute(() => _projetoService.Add(projeto));
         }
 
+        [HttpPost]
+        [Route("ProjetoAluno")]
+        public IActionResult Inserir(IEnumerable<ProjetoAlunoDto> projetos)
+        {
+            return Execute(() => _projetoService.AddProjetoAluno(projetos));
+        }
+
         [HttpGet]
         public IActionResult BuscarTodos()
         {

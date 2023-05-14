@@ -35,10 +35,17 @@ namespace ApiTreinoNutricao.Controllers
         }
 
         [HttpGet]
-        [Route("{treinoId}")]
-        public IActionResult GetById(long treinoId)
+        [Route("{usuarioId}")]
+        public IActionResult GetByUsuarioId(long usuarioId)
         {
-            return Execute(() => _treinoService.GetById(treinoId));
+            return Execute(() => _treinoService.GetByUsuarioId(usuarioId));
+        }
+
+        [HttpGet]
+        [Route("EmpresaId/{empresaId}")]
+        public IActionResult GetByEmpresaId(long empresaId)
+        {
+            return Execute(() => _treinoService.GetByEmpresaId(empresaId));
         }
     }
 }
