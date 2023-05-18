@@ -1,4 +1,5 @@
 ﻿using ApiTreinoNutricao.Domain.Dto;
+using ApiTreinoNutricao.Domain.Dto.Enum;
 using ApiTreinoNutricao.Domain.Entities;
 using ApiTreinoNutricao.Domain.Interfaces.Repositories;
 using ApiTreinoNutricao.Domain.Interfaces.Services;
@@ -17,7 +18,7 @@ namespace ApiTreinoNutricao.Service
 
         public Usuario Add(UsuarioDto usuarioDto) => _baseRepository.Insert(new Usuario(usuarioDto));
 
-        public IEnumerable<Usuario> GetByEmpresaId(long empresaId) => _usuarioRepository.GetByEmpresaId(empresaId);
+        public IEnumerable<Usuario> GetByEmpresaId(long empresaId, BuscarUsuarioEnum tipoBusca) => _usuarioRepository.GetByEmpresaId(empresaId, tipoBusca);
 
         public ResponseDto<Usuario> Login(UsuarioLoginDto usuarioLogin) => _usuarioRepository.Login(usuarioLogin);
 

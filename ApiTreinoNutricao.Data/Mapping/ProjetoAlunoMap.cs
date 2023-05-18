@@ -19,13 +19,6 @@ namespace ApiTreinoNutricao.Data.Mapping
 
             builder.Property(p => p.UsuarioId).HasColumnName("usuario_id").HasColumnType("int");
             builder.HasOne(p => p.Usuario);
-
-            builder.Property(p => p.PlanoAlimentarId).HasColumnName("plano_alimentar_id").HasColumnType("int");
-            builder.HasOne(p => p.PlanoAlimentar);
-
-            builder.Property(p => p.TreinoId).HasColumnName("treino_id").HasColumnType("int");
-            builder.HasOne(p => p.Treino);
-
         }
     }
 }

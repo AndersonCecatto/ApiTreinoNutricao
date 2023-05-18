@@ -6,7 +6,5 @@ namespace ApiTreinoNutricao.Domain.Dto
     {
         public long ProjetoId { get; set; }
         public long UsuarioId { get; set; }
-        public long? PlanoAlimentarId { get; set; }
-        public long? TreinoId { get; set; }
     }
 }

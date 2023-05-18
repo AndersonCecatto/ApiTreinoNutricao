@@ -12,12 +12,9 @@ namespace ApiTreinoNutricao.Data.Mapping
             builder.HasKey(p => p.Id);
 
             builder.Property(p => p.Nome).HasColumnName("nome").HasColumnType("varchar(250)");
-            builder.Property(p => p.PlanoAlimentar).HasColumnName("planoalimentar").HasColumnType("bool");
-            builder.Property(p => p.Treino).HasColumnName("treino").HasColumnType("bool");
-            builder.Property(p => p.Foto).HasColumnName("foto").HasColumnType("bool");
-            builder.Property(p => p.Exame).HasColumnName("exame").HasColumnType("bool");
-            builder.Property(p => p.Avaliacao).HasColumnName("avaliacao").HasColumnType("bool");
-            builder.Property(p => p.Anamnese).HasColumnName("anamnese").HasColumnType("bool");
+            builder.Property(p => p.PlanosAlimentares).HasColumnName("planos_alimentares").HasColumnType("varchar(1000)");
+            builder.Property(p => p.Treinos).HasColumnName("treinos").HasColumnType("varchar(350)");
+            builder.Property(p => p.Exames).HasColumnName("exames").HasColumnType("varchar(350)");
             builder.Property(p => p.Observacoes).HasColumnName("observacoes").HasColumnType("varchar(350)");
             builder.Property(p => p.DataCadastro).HasColumnName("datacadastro").HasColumnType("timestamp");
             builder.Property(p => p.Ativo).HasColumnName("ativo").HasColumnType("bool");

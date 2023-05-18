@@ -23,7 +23,7 @@ namespace ApiTreinoNutricao.Data.Context
             modelBuilder.Entity<PlanoAlimentar>(new PlanoAlimentarMap().Configure);
             modelBuilder.Entity<PlanoAlimentarAlimento>(new PlanoAlimentarAlimentoMap().Configure);
             modelBuilder.Entity<Projeto>(new ProjetoMap().Configure);
-            //modelBuilder.Entity<ProjetoAluno>(new ProjetoAlunoMap().Configure);
+            modelBuilder.Entity<ProjetoAluno>(new ProjetoAlunoMap().Configure);
             modelBuilder.Entity<Treino>(new TreinoMap().Configure);
             modelBuilder.Entity<TreinoExercicio>(new TreinoExercicioMap().Configure);
             modelBuilder.Entity<Usuario>(new UsuarioMap().Configure);
