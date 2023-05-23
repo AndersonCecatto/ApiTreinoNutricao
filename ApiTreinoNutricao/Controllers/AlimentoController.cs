@@ -1,4 +1,6 @@
 ﻿using ApiTreinoNutricao.Controllers.Common;
+using ApiTreinoNutricao.Domain.Dto;
+using ApiTreinoNutricao.Domain.Dto.Enum;
 using ApiTreinoNutricao.Domain.Entities;
 using ApiTreinoNutricao.Domain.Interfaces.Services;
 using Microsoft.AspNetCore.Mvc;
@@ -17,7 +19,7 @@ namespace ApiTreinoNutricao.Controllers
         }
 
         [HttpPost]
-        public IActionResult Inserir(Alimento alimento)
+        public IActionResult Inserir(AlimentoDto alimento)
         {
             return Execute(() => _alimentoService.Add(alimento));
         }
@@ -29,7 +31,7 @@ namespace ApiTreinoNutricao.Controllers
         }
 
         [HttpPut]
-        public IActionResult Alterar(Alimento alimento)
+        public IActionResult Alterar(AlimentoDto alimento)
         {
             return Execute(() => _alimentoService.UpdateWithRule(alimento));
         }
@@ -39,6 +41,13 @@ namespace ApiTreinoNutricao.Controllers
         public IActionResult GetById(long alimentoId)
         {
             return Execute(() => _alimentoService.GetById(alimentoId));
+        }
+
+        [HttpGet]
+        [Route("EmpresaId/{empresaId}/TipoBusca/{tipoBusca}")]
+        public IActionResult GetByEmpresaId(long empresaId, BuscarUsuarioEnum tipoBusca)
+        {
+            return Execute(() => _alimentoService.GetByEmpresaId(empresaId, tipoBusca));
         }
     }
 }

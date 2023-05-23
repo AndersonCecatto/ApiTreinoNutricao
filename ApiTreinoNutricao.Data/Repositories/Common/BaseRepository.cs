@@ -1,5 +1,7 @@
 ﻿using ApiTreinoNutricao.Data.Context;
 using ApiTreinoNutricao.Domain.Common;
+using ApiTreinoNutricao.Domain.Dto.Enum;
+using ApiTreinoNutricao.Domain.Entities;
 using ApiTreinoNutricao.Domain.Interfaces.Repositories.Common;
 using Microsoft.EntityFrameworkCore;
 using System.Reflection;
@@ -57,6 +59,17 @@ namespace ApiTreinoNutricao.Data.Repositories.Common
                     _apiBaseContext.Entry(entity).Property(property.Name).IsModified = true;
 
             _apiBaseContext.SaveChanges();
+        }
+
+        public virtual IQueryable<TEntity> GetByAtivoInativo(IQueryable<TEntity> query, BuscarUsuarioEnum tipoBusca)
+        {
+            return tipoBusca switch
+            {
+                BuscarUsuarioEnum.Ativos => query.Where(x => x.Ativo == true),
+                BuscarUsuarioEnum.Inativos => query.Where(x => x.Ativo == false),
+                BuscarUsuarioEnum.Todos => query,
+                _ => query
+            };
         }
     }
 }

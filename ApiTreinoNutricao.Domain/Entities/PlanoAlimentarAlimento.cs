@@ -12,8 +12,8 @@ namespace ApiTreinoNutricao.Domain.Entities
         public PlanoAlimentarAlimento(PlanoAlimentarAlimentoDto planoAlimentarAlimentoDto)
         {
             Id = planoAlimentarAlimentoDto.Id;
-            AlimentoId = planoAlimentarAlimentoDto.AlimentoId;
             PlanoAlimentarId = planoAlimentarAlimentoDto.PlanoAlimentarId;
+            AlimentoId = planoAlimentarAlimentoDto.AlimentoId;
             Observacoes = planoAlimentarAlimentoDto.Observacoes;
             Ativo = planoAlimentarAlimentoDto.Ativo;
         }

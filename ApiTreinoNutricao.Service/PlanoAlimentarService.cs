@@ -9,10 +9,12 @@ namespace ApiTreinoNutricao.Service
     public class PlanoAlimentarService : BaseService<PlanoAlimentar>, IPlanoAlimentarService
     {
         private readonly IPlanoAlimentarRepository _planoAlimentarRepository;
+        private readonly IPlanoAlimentarAlimentoRepository _planoAlimentarAlimentoRepository;
 
-        public PlanoAlimentarService(IPlanoAlimentarRepository planoAlimentarRepository) : base(planoAlimentarRepository)
+        public PlanoAlimentarService(IPlanoAlimentarRepository planoAlimentarRepository, IPlanoAlimentarAlimentoRepository planoAlimentarAlimentoRepository) : base(planoAlimentarRepository)
         {
-            _planoAlimentarRepository = planoAlimentarRepository;    
+            _planoAlimentarRepository = planoAlimentarRepository;
+            _planoAlimentarAlimentoRepository = planoAlimentarAlimentoRepository;
         }
 
         public PlanoAlimentar Add(PlanoAlimentarDto planoAlimentarDto) => _baseRepository.Insert(new PlanoAlimentar(planoAlimentarDto));

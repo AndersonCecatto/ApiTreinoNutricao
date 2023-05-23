@@ -9,5 +9,7 @@ namespace ApiTreinoNutricao.Domain.Entities
         public string? TempoDescanso { get; set; }
         public string? Repeticoes { get; set; }
         public string? Tecnica { get; set; }
+        public long EmpresaId { get; set; }
+        public virtual Empresa? Empresa { get; set; }
     }
 }

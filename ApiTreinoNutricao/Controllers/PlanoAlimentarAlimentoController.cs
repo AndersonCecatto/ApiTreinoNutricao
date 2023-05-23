@@ -18,7 +18,7 @@ namespace ApiTreinoNutricao.Controllers
         }
 
         [HttpPost]
-        public IActionResult Inserir(IEnumerable<PlanoAlimentarAlimentoDto> planoAlimentarAlimentoDtos)
+        public IActionResult Inserir(PlanoAlimentarAlimentoDto planoAlimentarAlimentoDtos)
         {
             return Execute(() => _planoAlimentarAlimentoService.Add(planoAlimentarAlimentoDtos));
         }
@@ -30,7 +30,7 @@ namespace ApiTreinoNutricao.Controllers
         }
 
         [HttpPut]
-        public IActionResult Alterar(IEnumerable<PlanoAlimentarAlimentoDto> planoAlimentarAlimentoDtos)
+        public IActionResult Alterar(PlanoAlimentarAlimentoDto planoAlimentarAlimentoDtos)
         {
             return Execute(() => _planoAlimentarAlimentoService.UpdateWithRule(planoAlimentarAlimentoDtos));
         }

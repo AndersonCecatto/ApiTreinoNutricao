@@ -18,19 +18,7 @@ namespace ApiTreinoNutricao.Data.Repositories
         {
             var consulta = _apiBaseContext.Set<Usuario>().Where(x => x.EmpresaId == empresaId);
 
-            switch (tipoBusca)
-            {
-                case BuscarUsuarioEnum.Ativos:
-                    consulta = consulta.Where(x => x.Ativo == true);
-                    break;
-                case BuscarUsuarioEnum.Inativos:
-                    consulta = consulta.Where(x => x.Ativo == false);
-                    break;
-                default: 
-                    return consulta;
-            }
-
-            return consulta;
+            return GetByAtivoInativo(consulta, tipoBusca);
         } 
 
         public ResponseDto<Usuario> Login(UsuarioLoginDto usuarioLogin)
