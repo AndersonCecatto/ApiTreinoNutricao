@@ -30,6 +30,7 @@ namespace ApiTreinoNutricao.Data.Context
             modelBuilder.Entity<Menu>(new MenuMap().Configure);
             modelBuilder.Entity<MenuUsuario>(new MenuUsuarioMap().Configure);
             modelBuilder.Entity<Anamnese>(new AnamnesiaMap().Configure);
+            modelBuilder.Entity<Avaliacao>(new AvaliacaoMap().Configure);
         }
     }
 }

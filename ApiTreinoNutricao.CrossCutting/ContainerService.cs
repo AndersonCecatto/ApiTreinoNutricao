@@ -32,6 +32,7 @@ namespace ApiTreinoNutricao.CrossCutting
             services.AddScoped<IMenuRepository, MenuRepository>();
             services.AddScoped<IMenuUsuarioRepository, MenuUsuarioRepository>();
             services.AddScoped<IAnamneseRepository, AnamneseRepository>();
+            services.AddScoped<IAvaliacaoRepository, AvaliacaoRepository>();
             return services;
         }
 
@@ -51,6 +52,7 @@ namespace ApiTreinoNutricao.CrossCutting
             services.AddScoped<IUsuarioService, UsuarioService>();
             services.AddScoped<IMenuUsuarioService, MenuUsuarioService>();
             services.AddScoped<IAnamneseService, AnamneseService>();
+            services.AddScoped<IAvaliacaoService, AvaliacaoService>();
 
             return services;
         }
