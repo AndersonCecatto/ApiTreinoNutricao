@@ -5,9 +5,9 @@ namespace ApiTreinoNutricao.Domain.Entities
     public class Avaliacao : BaseEntity
     {
         public string? Descricao { get; set; }
-        public int MetabolismoBasal { get; set; }
-        public int TreinoKcal { get; set; }
-        public int Cardio { get; set; }
+        public decimal MetabolismoBasal { get; set; }
+        public decimal TreinoKcal { get; set; }
+        public decimal Cardio { get; set; }
 
         //Composição Corporal
         public DateTime Data { get; set; }
