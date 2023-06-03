@@ -10,7 +10,6 @@ namespace ApiTreinoNutricao.Domain.Interfaces.Services
         TreinoDto UpdateWithRule(TreinoDto treinoDto);
         IEnumerable<Treino> GetByUsuarioId(long usuarioId);
         IEnumerable<Treino> GetByEmpresaId(long empresaId);
-
         IEnumerable<Treino> BuscarPorIdsTreinos(IEnumerable<int> idsTreinos);
     }
 }
