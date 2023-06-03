@@ -2,6 +2,7 @@
 using ApiTreinoNutricao.Domain.Dto;
 using ApiTreinoNutricao.Domain.Interfaces.Services;
 using Microsoft.AspNetCore.Mvc;
+using System.ComponentModel;
 
 namespace ApiTreinoNutricao.Controllers
 {
@@ -32,6 +33,13 @@ namespace ApiTreinoNutricao.Controllers
         public IActionResult Alterar(TreinoDto treino)
         {
             return Execute(() => _treinoService.UpdateWithRule(treino));
+        }
+
+        [HttpPost]
+        [Route("BuscarPorIdsTreinos")]
+        public IActionResult BuscarPorIdsTreinos(IEnumerable<int> idsTreinos)
+        {
+            return Execute(() => _treinoService.BuscarPorIdsTreinos(idsTreinos));
         }
 
         [HttpGet]

@@ -8,5 +8,6 @@ namespace ApiTreinoNutricao.Domain.Interfaces.Services
     {
         ProjetoAluno Add(ProjetoAlunoDto projetoAlunoDto);
         IEnumerable<ProjetoAluno> GetByProjetoId(long projetoId);
+        IEnumerable<ProjetoAluno> GetByUsuarioId(long usuarioId);
     }
 }

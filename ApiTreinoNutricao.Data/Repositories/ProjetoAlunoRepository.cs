@@ -17,5 +17,10 @@ namespace ApiTreinoNutricao.Data.Repositories
         {
             return _apiBaseContext.Set<ProjetoAluno>().Include(x => x.Usuario).Where(x => x.ProjetoId == projetoId);
         }
+
+        public IEnumerable<ProjetoAluno> GetByUsuarioId(long usuarioId)
+        {
+            return _apiBaseContext.Set<ProjetoAluno>().Include(x => x.Projeto).AsNoTracking().Where(x => x.UsuarioId == usuarioId);
+        }
     }
 }

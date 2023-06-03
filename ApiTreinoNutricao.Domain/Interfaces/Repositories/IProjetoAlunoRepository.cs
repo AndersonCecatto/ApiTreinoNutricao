@@ -6,5 +6,6 @@ namespace ApiTreinoNutricao.Domain.Interfaces.Repositories
     public interface IProjetoAlunoRepository : IBaseRepository<ProjetoAluno>
     {
         IEnumerable<ProjetoAluno> GetByProjetoId(long projetoId);
+        IEnumerable<ProjetoAluno> GetByUsuarioId(long usuarioId);
     }
 }

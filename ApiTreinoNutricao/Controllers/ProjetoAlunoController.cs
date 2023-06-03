@@ -39,5 +39,12 @@ namespace ApiTreinoNutricao.Controllers
         {
             return Execute(() => _projetoAlunoService.GetByProjetoId(projetoId));
         }
+
+        [HttpGet]
+        [Route("UsuarioId/{usuarioId}")]
+        public IActionResult GetByUsuarioId(long usuarioId)
+        {
+            return Execute(() => _projetoAlunoService.GetByUsuarioId(usuarioId));
+        }
     }
 }

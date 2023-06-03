@@ -17,6 +17,16 @@ namespace ApiTreinoNutricao.Service
 
         public Treino Add(TreinoDto treinoDto) => _baseRepository.Insert(new Treino(treinoDto));
 
+        public IEnumerable<Treino> BuscarPorIdsTreinos(IEnumerable<int> idsTreinos)
+        {
+            var treinos = new List<Treino>();
+
+            foreach (int id in idsTreinos)
+                treinos.Add(GetById(id));
+
+            return treinos;
+        }
+
         public IEnumerable<Treino> GetByEmpresaId(long empresaId)
         {
             return _treinoRepository.GetByEmpresaId(empresaId);
@@ -32,5 +42,6 @@ namespace ApiTreinoNutricao.Service
             _baseRepository.UpdateWithRule(new Treino(treinoDto));
             return treinoDto;
         }
+
     }
 }

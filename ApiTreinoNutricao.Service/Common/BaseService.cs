@@ -23,7 +23,7 @@ namespace ApiTreinoNutricao.Service.Common
 
         public virtual IEnumerable<TEntity> GetAll() => _baseRepository.GetAll();
 
-        public virtual TEntity GetById(long id) => _baseRepository.Find(id);
+        public TEntity GetById(long id) => _baseRepository.Find(id);
 
         public virtual TEntity Update(TEntity entity)
         {
