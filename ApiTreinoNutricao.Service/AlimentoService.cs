@@ -29,5 +29,14 @@ namespace ApiTreinoNutricao.Service
 
         public IEnumerable<Alimento> GetByEmpresaId(long empresaId, BuscarUsuarioEnum tipoBusca) => _alimentoRepository.GetByEmpresaId(empresaId, tipoBusca);
 
+        public IEnumerable<Alimento> BuscarPorIdsAlimentos(IEnumerable<int> idsAlimentos)
+        {
+            var alimentos = new List<Alimento>();
+
+            foreach (int id in idsAlimentos)
+                alimentos.Add(GetById(id));
+
+            return alimentos;
+        }
     }
 }

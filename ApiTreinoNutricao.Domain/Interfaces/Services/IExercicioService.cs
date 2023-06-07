@@ -7,5 +7,6 @@ namespace ApiTreinoNutricao.Domain.Interfaces.Services
     public interface IExercicioService : IBaseService<Exercicio>
     {
         IEnumerable<Exercicio> GetByEmpresaId(long empresaId, BuscarUsuarioEnum tipoBusca);
+        IEnumerable<Exercicio> BuscarPorIdsExercicios(IEnumerable<int> idsExercicios);
     }
 }

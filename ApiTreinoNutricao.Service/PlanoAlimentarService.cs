@@ -19,6 +19,16 @@ namespace ApiTreinoNutricao.Service
 
         public PlanoAlimentar Add(PlanoAlimentarDto planoAlimentarDto) => _baseRepository.Insert(new PlanoAlimentar(planoAlimentarDto));
 
+        public IEnumerable<PlanoAlimentar> BuscarPorIdsPlanosAlimentares(IEnumerable<int> idsPlanosAlimentares)
+        {
+            var planosAlimentares = new List<PlanoAlimentar>();
+
+            foreach (int id in idsPlanosAlimentares)
+                planosAlimentares.Add(GetById(id));
+
+            return planosAlimentares;
+        }
+
         public IEnumerable<PlanoAlimentar> GetByEmpresaId(long empresaId) => _planoAlimentarRepository.GetByEmpresaId(empresaId);
 
         public IEnumerable<PlanoAlimentar> GetByUsuarioId(long usuarioId) => _planoAlimentarRepository.GetByUsuarioId(usuarioId);

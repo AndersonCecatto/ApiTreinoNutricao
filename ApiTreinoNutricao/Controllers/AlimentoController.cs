@@ -3,6 +3,7 @@ using ApiTreinoNutricao.Domain.Dto;
 using ApiTreinoNutricao.Domain.Dto.Enum;
 using ApiTreinoNutricao.Domain.Entities;
 using ApiTreinoNutricao.Domain.Interfaces.Services;
+using ApiTreinoNutricao.Service;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ApiTreinoNutricao.Controllers
@@ -48,6 +49,13 @@ namespace ApiTreinoNutricao.Controllers
         public IActionResult GetByEmpresaId(long empresaId, BuscarUsuarioEnum tipoBusca)
         {
             return Execute(() => _alimentoService.GetByEmpresaId(empresaId, tipoBusca));
+        }
+
+        [HttpPost]
+        [Route("BuscarPorIdsAlimentos")]
+        public IActionResult BuscarPorIdsAlimentos(IEnumerable<int> idsAlimentos)
+        {
+            return Execute(() => _alimentoService.BuscarPorIdsAlimentos(idsAlimentos));
         }
     }
 }

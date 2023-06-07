@@ -10,5 +10,6 @@ namespace ApiTreinoNutricao.Domain.Interfaces.Services
         Alimento Add(AlimentoDto alimentoDto);
         AlimentoDto UpdateWithRule(AlimentoDto alimentoDto);
         IEnumerable<Alimento> GetByEmpresaId(long empresaId, BuscarUsuarioEnum tipoBusca);
+        IEnumerable<Alimento> BuscarPorIdsAlimentos(IEnumerable<int> idsAlimentos);
     }
 }

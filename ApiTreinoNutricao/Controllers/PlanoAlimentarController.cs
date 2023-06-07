@@ -1,6 +1,7 @@
 ﻿using ApiTreinoNutricao.Controllers.Common;
 using ApiTreinoNutricao.Domain.Dto;
 using ApiTreinoNutricao.Domain.Interfaces.Services;
+using ApiTreinoNutricao.Service;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ApiTreinoNutricao.Controllers
@@ -53,6 +54,13 @@ namespace ApiTreinoNutricao.Controllers
         public IActionResult GetByEmpresaId(long empresaId)
         {
             return Execute(() => _planoAlimentarService.GetByEmpresaId(empresaId));
+        }
+
+        [HttpPost]
+        [Route("BuscarPorIdsPlanosAlimentares")]
+        public IActionResult BuscarPorIdsPlanosAlimentares(IEnumerable<int> idsPlanosAlimentares)
+        {
+            return Execute(() => _planoAlimentarService.BuscarPorIdsPlanosAlimentares(idsPlanosAlimentares));
         }
     }
 }

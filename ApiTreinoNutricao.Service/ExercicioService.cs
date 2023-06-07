@@ -14,6 +14,16 @@ namespace ApiTreinoNutricao.Service
             _exercicioRepository = exercicioRepository;
         }
 
+        public IEnumerable<Exercicio> BuscarPorIdsExercicios(IEnumerable<int> idsExercicios)
+        {
+            var exercicios = new List<Exercicio>();
+
+            foreach (int id in idsExercicios)
+                exercicios.Add(GetById(id));
+
+            return exercicios;
+        }
+
         public IEnumerable<Exercicio> GetByEmpresaId(long empresaId, BuscarUsuarioEnum tipoBusca) => _exercicioRepository.GetByEmpresaId(empresaId, tipoBusca);
     }
 }
